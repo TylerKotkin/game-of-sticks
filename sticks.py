@@ -19,16 +19,23 @@ def main():
         if player1_sticks:
             sticks -= player1_sticks
             print('{} sticks remaining'.format(sticks))
+        if sticks <= 0:
+            x = input("Player 1, you lost. Enter yes to play again: ")
+            if x == 'yes':
+                return main()
+            else:
+                exit()
         player2_sticks = int(input("Player 2: How many sticks would you like to take? (1-3) "))
         if player2_sticks:
             sticks -= player2_sticks
             print('{} sticks remaining'.format(sticks))
         if sticks <= 0:
-            x = input("Player {}, you lost. Enter yes to play again: ".format('x'))
+            x = input("Player 2, you lost. Enter yes to play again: ")
             if x == 'yes':
                 return main()
             else:
                 exit()
+
 
 
     # if sticks <= 0:
